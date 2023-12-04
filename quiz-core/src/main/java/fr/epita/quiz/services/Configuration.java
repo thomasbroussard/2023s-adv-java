@@ -1,7 +1,6 @@
-package fr.epita.fr.epita.quiz.services;
+package fr.epita.quiz.services;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 

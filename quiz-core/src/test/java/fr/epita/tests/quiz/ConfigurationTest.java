@@ -1,6 +1,6 @@
 package fr.epita.tests.quiz;
 
-import fr.epita.fr.epita.quiz.services.Configuration;
+import fr.epita.quiz.services.Configuration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package fr.epita.fr.epita.quiz.services;
+package fr.epita.quiz.services;
 
 import fr.epita.quiz.datamodel.Question;
 
