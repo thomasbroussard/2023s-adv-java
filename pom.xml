@@ -11,6 +11,7 @@
     <modules>
         <module>quiz-core</module>
         <module>quiz-rest-httpserver</module>
+        <module>junit-spring-module</module>
     </modules>
 
     <properties>

@@ -52,6 +52,7 @@ public class TestWithDI {
         preparedStatement.execute();
 
     }
+
    // @Test
     //public void firstTestFromDI() {
       //  Assertions.assertNotNull(testFromDI);
