@@ -1,12 +1,9 @@
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpContext;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import fr.epita.quiz.datamodel.User;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -21,7 +18,6 @@ public class HttpServerTest {
 
 
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException, TimeoutException {
-
         //server side
         HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
         int processors = Runtime.getRuntime().availableProcessors() / 2;
