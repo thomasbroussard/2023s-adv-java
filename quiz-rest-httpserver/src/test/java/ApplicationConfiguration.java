@@ -15,6 +15,11 @@ import java.util.concurrent.Executors;
 public class ApplicationConfiguration {
 
 
+    @Bean("httpClient")
+    public SomeClass getHttpClient(){
+        return new HttpClient("url",port);
+    }
+
     @Bean("rootHandler")
     public HttpHandler rootHandler(){
         return new RootController();
