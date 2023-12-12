@@ -12,7 +12,6 @@ import java.util.concurrent.Executors;
 
 public class MicroServer {
 
-
     private final HttpServer server;
 
     public MicroServer(int port, int processors, String path, HttpHandler handler) throws IOException {
