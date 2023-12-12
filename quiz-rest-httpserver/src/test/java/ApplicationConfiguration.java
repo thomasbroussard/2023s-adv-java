@@ -2,6 +2,7 @@ import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import fr.epita.quiz.web.client.UserHttpClient;
+import fr.epita.quiz.web.server.MicroServer;
 import fr.epita.quiz.web.server.RootController;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -27,13 +28,9 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    public HttpServer getServer(@Qualifier("rootHandler") HttpHandler handler) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
+    public MicroServer getServer(@Qualifier("rootHandler") HttpHandler handler) throws IOException {
         int processors = Runtime.getRuntime().availableProcessors() / 2;
-        ExecutorService executor = Executors.newFixedThreadPool(processors);
-        server.setExecutor(executor);
-        HttpContext context = server.createContext("/test");
-        context.setHandler(handler);
+        MicroServer server = new MicroServer(80, processors, "/test", handler );
         return server;
     }
 }

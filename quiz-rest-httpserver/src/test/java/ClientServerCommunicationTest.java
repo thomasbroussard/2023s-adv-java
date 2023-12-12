@@ -1,6 +1,7 @@
 import com.sun.net.httpserver.HttpServer;
 import fr.epita.quiz.datamodel.User;
 import fr.epita.quiz.web.client.UserHttpClient;
+import fr.epita.quiz.web.server.MicroServer;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,7 +18,7 @@ public class ClientServerCommunicationTest {
 
 
     @Inject
-    private HttpServer server;
+    private MicroServer server;
 
     @Inject
     private UserHttpClient client;
@@ -35,7 +36,7 @@ public class ClientServerCommunicationTest {
         //then
         Assertions.assertThat(users).hasSize(1);
 
-        server.stop(1);
+        server.stop();
     }
 
 }
