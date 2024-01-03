@@ -27,6 +27,9 @@ public class MicroServer {
         this.server.start();
     }
 
+    public void stop(int delay){
+        this.server.stop(delay);
+    }
     public void stop(){
         this.server.stop(0);
     }

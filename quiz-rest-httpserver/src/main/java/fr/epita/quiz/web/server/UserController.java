@@ -27,6 +27,7 @@ public class UserController implements HttpHandler {
                 byte[] bytes = jsonString.getBytes();
                 ex.sendResponseHeaders(200, bytes.length);
                 ex.getResponseBody().write(bytes);
+                ex.getResponseBody().flush();
                 break;
             case "POST":
                 System.out.println("test from post");
@@ -36,6 +37,7 @@ public class UserController implements HttpHandler {
                 byte[] response = "user created with id 1".getBytes();
                 ex.sendResponseHeaders(201, response.length);
                 ex.getResponseBody().write(response);
+                ex.getResponseBody().flush();
                 break;
         }
     }
