@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import javax.inject.Inject;
+import java.nio.file.attribute.UserPrincipal;
 
 public class QuestionJPADAO {
 
@@ -18,6 +19,21 @@ public class QuestionJPADAO {
         session.persist(question);
         transaction.commit();
     }
+    public void update(Question question){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(question);
+        transaction.commit();
+    }
+
+    public void delete(Question question){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.remove(question);
+        transaction.commit();
+    }
+
+
 
 
 }
