@@ -45,9 +45,6 @@ public class TestHibernateORM {
 
         Assertions.assertThat(allQuestions).hasSize(2);
         System.out.println(allQuestions);
-
-
-
     }
 
 }
