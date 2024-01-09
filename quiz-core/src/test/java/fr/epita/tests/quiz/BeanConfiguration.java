@@ -1,6 +1,7 @@
 package fr.epita.tests.quiz;
 
 import fr.epita.quiz.services.QuestionDAOWithDI;
+import fr.epita.quiz.services.QuestionJPADAO;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
-import javax.inject.Inject;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -31,6 +31,11 @@ public class BeanConfiguration {
     @Bean("test")
     public fr.epita.quiz.services.Configuration configuration(){
         return fr.epita.quiz.services.Configuration.getInstance();
+    }
+
+    @Bean("questionJPADAO")
+    public QuestionJPADAO questionJPADAO(SessionFactory factory){
+        return new QuestionJPADAO(factory);
     }
 
     @Bean

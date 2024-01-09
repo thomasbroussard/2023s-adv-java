@@ -5,13 +5,13 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import javax.inject.Inject;
-import java.nio.file.attribute.UserPrincipal;
-
 public class QuestionJPADAO {
 
-    @Inject
     SessionFactory sessionFactory;
+
+    public QuestionJPADAO(SessionFactory sessionFactory){
+        this.sessionFactory = sessionFactory;
+    }
 
     public void create(Question question){
         Session session = sessionFactory.openSession();

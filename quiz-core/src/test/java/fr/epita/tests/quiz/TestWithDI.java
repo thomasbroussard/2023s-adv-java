@@ -3,13 +3,13 @@ package fr.epita.tests.quiz;
 import fr.epita.quiz.datamodel.Question;
 import fr.epita.quiz.services.Configuration;
 import fr.epita.quiz.services.QuestionDAOWithDI;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import javax.inject.Inject;
-import javax.inject.Named;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
