@@ -21,6 +21,7 @@ import java.util.Properties;
 public class BeanConfiguration {
 
 
+
     @Bean("defaultString")
     public String getTestStringValue(){
         return "testFromDI";
