@@ -1,11 +1,14 @@
 package fr.epita.quiz.services;
 
 import fr.epita.quiz.datamodel.Question;
+import fr.epita.quiz.services.api.IQuestionDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-public class QuestionJPADAO {
+import java.util.List;
+
+public class QuestionJPADAO implements IQuestionDAO {
 
     SessionFactory sessionFactory;
 
@@ -33,7 +36,15 @@ public class QuestionJPADAO {
         transaction.commit();
     }
 
+    @Override
+    public List<Question> search(Question question) {
+        return null;
+    }
 
+    @Override
+    public Question getById(Object id) {
+        return null;
+    }
 
 
 }

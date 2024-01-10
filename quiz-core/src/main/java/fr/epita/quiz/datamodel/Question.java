@@ -4,6 +4,9 @@ package fr.epita.quiz.datamodel;
 // https://thomas-broussard.fr/work/java/courses/project/fundamental.xhtml
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Fetch;
+
+import java.util.List;
 
 @Entity
 @Table(name="QUESTIONS")
@@ -18,6 +21,9 @@ public class Question {
 
     @Column(name = "QUEST_TITLE")
     private String title;
+
+
+
 
     public int getId() {
         return id;
@@ -42,4 +48,5 @@ public class Question {
                 ", title='" + title + '\'' +
                 '}';
     }
+
 }
